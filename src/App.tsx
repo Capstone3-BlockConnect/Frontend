@@ -1,13 +1,13 @@
 import Router from "./Router";
-import Footer from "./component/footer/Footer";
-import Header from "./component/header/Header";
+
+import React from "react";
+import GlobalStyles from "./style/GlobalStyle";
 
 function App() {
   return (
     <>
-      <Header />
+      <GlobalStyles />
       <Router />
-      <Footer />
     </>
   );
 }

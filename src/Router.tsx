@@ -1,19 +1,27 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import LandingPage from "./pages/landing/LandingPage";
 import LoginPage from "./pages/login/LoginPage";
-import Header from "./component/header/Header";
+import React from "react";
+import DefaultView from "./component/view/DefaultView";
 
 const router = createBrowserRouter([
-  { path: "/", element: <LandingPage /> },
+  {
+    path: "/",
+    element: (
+      <DefaultView>
+        <LandingPage />
+      </DefaultView>
+    ),
+  },
   { path: "/login", element: <LoginPage /> },
 ]);
 
-const Router = () => {
-  return;
-  <>
-    <Header />
-    <RouterProvider router={router} />;
-  </>;
+const Router = (): React.JSX.Element => {
+  return (
+    <>
+      <RouterProvider router={router} />
+    </>
+  );
 };
 
 export default Router;

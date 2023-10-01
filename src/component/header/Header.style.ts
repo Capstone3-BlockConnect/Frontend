@@ -1,0 +1,72 @@
+import { Button } from "@mui/material";
+import styled from "styled-components";
+
+interface navProps {
+  isSticky?: boolean;
+}
+
+export const MenuNav = styled.nav<navProps>`
+  width: 100%;
+
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  padding: 0.7rem 2rem 1rem 2rem;
+  border-bottom: ${(props) =>
+    props.isSticky ? "1px solid white" : "1px solid gray"};
+
+  color: ${(props) => (props.isSticky ? "white" : "black")};
+`;
+
+export const Logo = styled.p`
+  white-space: nowrap;
+  font-weight: 800;
+  letter-spacing: 1px;
+  font-size: 1.2rem;
+
+  display: flex;
+  align-items: center;
+`;
+
+export const MenuItem = styled.p`
+  white-space: nowrap;
+
+  font-weight: 800;
+
+  display: flex;
+  align-items: center;
+
+  position: relative;
+
+  &:before {
+    content: "";
+    position: absolute;
+    bottom: 0; // 아이템의 하단에 위치
+    left: 0; // 아이템의 왼쪽에서 시작
+    height: 2px; // 선의 높이
+    width: 0; // 초기 상태에서 선의 너비는 0
+    background-color: black; // 선의 색상
+    transition: width 0.5s ease; // 너비 변화에 대한 전환 효과
+  }
+
+  &:hover:before {
+    width: 100%; // hover 상태에서 선의 너비를 100%로 변경
+  }
+`;
+
+export const CenterMenu = styled.div`
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  column-gap: 4rem;
+  margin: 0rem 4rem 0rem 4rem;
+
+  width: 100%;
+`;
+
+export const LoginButton = styled(Button)`
+  white-space: nowrap;
+  border: 3px solid black;
+  border-radius: 30px;
+  padding: 0.5rem 0.3rem 0.5rem 0.3rem;
+`;
