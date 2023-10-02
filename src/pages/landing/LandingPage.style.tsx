@@ -8,6 +8,7 @@ export const Container = styled.div`
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
+  overflow: hidden;
 `;
 
 interface SectionProps {

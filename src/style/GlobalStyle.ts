@@ -1,3 +1,4 @@
+import { mediaQuaries } from "./mediaQuaries";
 import { createGlobalStyle } from "styled-components";
 
 const GlobalStyles = createGlobalStyle`
@@ -16,6 +17,18 @@ const GlobalStyles = createGlobalStyle`
         border: 0;
         font-size: 20px;
         vertical-align: baseline;
+        
+        @media (max-width: ${mediaQuaries.DESKTOP}px ) {
+            font-size: 15px;
+        }
+
+        @media (max-width: ${mediaQuaries.TABLET}px ) {
+            font-size: 13px;
+        }
+
+        @media (max-width: ${mediaQuaries.MOBILE}px ) {
+            font-size: 10px;
+        }
     }
     body{
         line-height: 1;

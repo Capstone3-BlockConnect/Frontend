@@ -5,9 +5,14 @@ import {
   Logo,
   MenuNav,
   MenuItem,
+  ProfileButton,
+  RightMenu,
 } from "./Header.style";
 import LoginIcon from "@mui/icons-material/Login";
+import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+import { useNavigate } from "react-router-dom";
 function Header() {
+  const navigate = useNavigate();
   const [isSticky, setIsSticky] = useState(false);
 
   const handleScroll = () => {
@@ -28,15 +33,49 @@ function Header() {
 
   return (
     <MenuNav isSticky={isSticky}>
-      <Logo>블록커넥트</Logo>
+      <Logo
+        onClick={() => {
+          navigate("/");
+        }}
+      >
+        블록-커넥트
+      </Logo>
       <CenterMenu>
-        <MenuItem>서비스소개</MenuItem>
-        <MenuItem>중고거래</MenuItem>
-        <MenuItem>고객센터</MenuItem>
+        <MenuItem
+          onClick={() => {
+            navigate("/introduce");
+          }}
+        >
+          서비스소개
+        </MenuItem>
+
+        <MenuItem
+          onClick={() => {
+            navigate("/store");
+          }}
+        >
+          중고거래
+        </MenuItem>
+        <MenuItem
+          onClick={() => {
+            navigate("/service");
+          }}
+        >
+          고객센터
+        </MenuItem>
       </CenterMenu>
-      <LoginButton variant="outlined" color="info" endIcon={<LoginIcon />}>
-        로그인
-      </LoginButton>
+      <RightMenu>
+        <ProfileButton
+          variant="outlined"
+          color="success"
+          endIcon={<AccountCircleIcon />}
+        >
+          내정보
+        </ProfileButton>
+        <LoginButton variant="outlined" color="info" endIcon={<LoginIcon />}>
+          로그인
+        </LoginButton>
+      </RightMenu>
     </MenuNav>
   );
 }

@@ -1,5 +1,6 @@
 import { Button } from "@mui/material";
 import styled from "styled-components";
+import { mediaQuaries } from "../../style/mediaQuaries";
 
 interface navProps {
   isSticky?: boolean;
@@ -26,6 +27,14 @@ export const Logo = styled.p`
 
   display: flex;
   align-items: center;
+
+  flex-shrink: 0;
+`;
+
+export const WordBoxWithLottie = styled.div`
+  display: flex;
+  flex-flow: row wrap;
+  align-items: flex-start;
 `;
 
 export const MenuItem = styled.p`
@@ -38,7 +47,7 @@ export const MenuItem = styled.p`
 
   position: relative;
 
-  &:before {
+  &:after {
     content: "";
     position: absolute;
     bottom: 0; // 아이템의 하단에 위치
@@ -49,7 +58,7 @@ export const MenuItem = styled.p`
     transition: width 0.5s ease; // 너비 변화에 대한 전환 효과
   }
 
-  &:hover:before {
+  &:hover:after {
     width: 100%; // hover 상태에서 선의 너비를 100%로 변경
   }
 `;
@@ -62,6 +71,21 @@ export const CenterMenu = styled.div`
   margin: 0rem 4rem 0rem 4rem;
 
   width: 100%;
+  flex-shrink: 1;
+`;
+
+export const RightMenu = styled.div`
+  display: flex;
+  flex-flow: row nowrap;
+  column-gap: 10px;
+`;
+
+export const ProfileButton = styled(Button)`
+  white-space: nowrap;
+  border: 3px solid black;
+  border-radius: 30px;
+  padding: 0.5rem 0.3rem 0.5rem 0.3rem;
+  flex-shrink: 0;
 `;
 
 export const LoginButton = styled(Button)`
@@ -69,4 +93,14 @@ export const LoginButton = styled(Button)`
   border: 3px solid black;
   border-radius: 30px;
   padding: 0.5rem 0.3rem 0.5rem 0.3rem;
+  flex-shrink: 0;
+`;
+
+export const LottieWrapper = styled.div`
+  position: relative;
+  top: 10%;
+  left: 10%;
+
+  @media (max-width: ${mediaQuaries.DESKTOP}px) {
+  }
 `;
