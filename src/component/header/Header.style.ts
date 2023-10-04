@@ -36,6 +36,8 @@ export const Logo = styled.p`
 
   @media (max-width: ${mediaQuaries.TABLET}px) {
     width: 100%;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
   }
 `;
 

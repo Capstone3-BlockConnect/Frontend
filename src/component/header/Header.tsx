@@ -11,6 +11,7 @@ import {
 import LoginIcon from "@mui/icons-material/Login";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import { useNavigate } from "react-router-dom";
+import normalToast from "../alert/normalToast";
 function Header() {
   const navigate = useNavigate();
   const [isSticky, setIsSticky] = useState(false);
@@ -72,7 +73,14 @@ function Header() {
         >
           내정보
         </ProfileButton>
-        <LoginButton variant="outlined" color="info" endIcon={<LoginIcon />}>
+        <LoginButton
+          variant="outlined"
+          color="info"
+          endIcon={<LoginIcon />}
+          onClick={() => {
+            normalToast({ icon: "success", title: "로그인되었습니다" });
+          }}
+        >
           로그인
         </LoginButton>
       </RightMenu>
