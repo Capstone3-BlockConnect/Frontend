@@ -17,6 +17,10 @@ export const MenuNav = styled.nav<navProps>`
     props.isSticky ? "1px solid white" : "1px solid gray"};
 
   color: ${(props) => (props.isSticky ? "white" : "black")};
+
+  @media (max-width: ${mediaQuaries.TABLET}px) {
+    flex-flow: column wrap;
+  }
 `;
 
 export const Logo = styled.p`
@@ -29,6 +33,10 @@ export const Logo = styled.p`
   align-items: center;
 
   flex-shrink: 0;
+
+  @media (max-width: ${mediaQuaries.TABLET}px) {
+    width: 100%;
+  }
 `;
 
 export const WordBoxWithLottie = styled.div`
@@ -72,12 +80,22 @@ export const CenterMenu = styled.div`
 
   width: 100%;
   flex-shrink: 1;
+
+  @media (max-width: ${mediaQuaries.TABLET}px) {
+    align-items: center;
+    margin: 0;
+  }
 `;
 
 export const RightMenu = styled.div`
   display: flex;
   flex-flow: row nowrap;
   column-gap: 10px;
+  @media (max-width: ${mediaQuaries.TABLET}px) {
+    width: 100%;
+    margin-top: 1rem;
+    justify-content: flex-end;
+  }
 `;
 
 export const ProfileButton = styled(Button)`
